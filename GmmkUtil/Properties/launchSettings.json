@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GmmkUtil": {
+      "commandName": "Project",
+      "commandLineArgs": "-d"
+    }
+  }
+}

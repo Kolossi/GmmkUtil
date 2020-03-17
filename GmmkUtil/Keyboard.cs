@@ -64,7 +64,6 @@ namespace GmmkUtil
             return await keyboard.Device.WriteAndReadAsync(writeBuffer);
         }
 
-#if DEBUG
         // although the keyboard isn't use, demanding one ensures factories have been initialised
         public static void ShowAllDevices(this IKeyboard keyboard)
         {
@@ -78,6 +77,5 @@ namespace GmmkUtil
                 Console.WriteLine($"    manu={device.Manufacturer}|prod={device.ProductName}|label={device.Label}|sn={device.SerialNumber}|usagePage={device.UsagePage}|usage={device.Usage}|vers={device.VersionNumber}|prodId={device.ProductId}|vend={device.VendorId}|rbuff={device.ReadBufferSize}|wbuff={device.WriteBufferSize}");
             }
         }
-#endif
     }
 }
