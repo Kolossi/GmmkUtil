@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace GmmkUtil
+namespace GmmkUtil.GmmkLib
 {
     public static class Utils
     {
