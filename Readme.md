@@ -17,6 +17,54 @@ their product.  Boo!
 I proceeded to develop this by sniffing the USB packets sent by the 
 GMMK Keyboard Editor app.
 
+## Usage
+
+The command has help text if run without parameters.
+
+### <a name="setprofile"></a>--setprofile
+
+An installer may come later, for now it's just copy the .exe from the github
+[releases page](https://github.com/Kolossi/GmmkUtil/releases) by hand.  Suggestion is to `C:\GmmkUtil` on windows.
+
+Simplest usage is to set the keyboard to use on of the 3 preset profiles:
+
+```
+C:\GmmkUtil>GmmkUtilConsole --setprofile 1
+```
+
+### <a name="initprofile"></a>--initprofile
+
+Alternatively, the util can be set to stay running and monitor for the
+keyboard being inserted in the USB port and set the profile when that
+happens:
+
+```
+C:\GmmkUtil>GmmkUtilConsole --initprofile 2
+```
+
+Why is this useful? I use my keyboard with 2 PCs, connected via a USB switcher
+sometimes it easy to forget which PC the keyboard is connected to. I have set
+up two profiles to match the different colour schemes of the 2 PCs.
+
+Once using this command, as soon as I switch the keyboard, the software
+running on the PC it's switched to changes the keyboard RGB profile.
+
+Ideally, it's run on machine startup, in which case the following
+windows registry file will set it up to run without leaving a console
+window running:
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run]
+"GmmkUtil"="powershell -WindowStyle Hidden Start-Process -FilePath \"C:\\GmmkUtil\\GmmkUtilConsole.exe\" -ArgumentList \"--initprofile=1\" -NoNewWindow"
+```
+
+(On the second PC, edit to read `--initprofile=2`)
+
+Suggestions for how to do this on Linux would be gratefully received.
+
+
 ## Future 
 
 To be developed over time.
