@@ -2,7 +2,7 @@
   "profiles": {
     "GmmkUtil": {
       "commandName": "Project",
-      "commandLineArgs": "-i 1"
+      "commandLineArgs": "-p 1"
     }
   }
 }
